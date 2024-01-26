@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionService {
+
     @Autowired
     QuestionDao questionDao;
+
+
     public List<Questions> getAllQuestions(){
         return questionDao.findAll();
 
@@ -25,4 +29,23 @@ public class QuestionService {
         questionDao.save(question);
         return "success";
     }
+
+    public String deleteQuestion(Integer id) {
+        // Check if the question exists
+        if (questionDao.existsById(id)) {
+            questionDao.deleteById(id);
+            return "Question deleted successfully";
+        } else {
+            return "Question not found";
+        }
+    }
+public String updateQuiz(Questions questions){
+
+           questionDao.save(questions);
+           return "updated successfuly";
+
+
+}
+
+
 }

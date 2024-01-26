@@ -2,6 +2,8 @@ package com.nabatwa.quizapp.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.annotation.processing.Generated;
 @Data
@@ -18,4 +20,7 @@ public class Questions {
     @Column(nullable = false)
     private String difficultyLevel;
     private String category;
+
+
+
 }

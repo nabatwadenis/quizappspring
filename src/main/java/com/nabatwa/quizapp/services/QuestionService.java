@@ -20,4 +20,9 @@ public class QuestionService {
         System.out.println(questionDao.findByCategory(category));
         return questionDao.findByCategory(category);
     }
+
+    public String addQuestion(Questions question) {
+        questionDao.save(question);
+        return "success";
+    }
 }

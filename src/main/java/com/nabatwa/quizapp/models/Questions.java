@@ -8,7 +8,7 @@ import javax.annotation.processing.Generated;
 @Entity
 public class Questions {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
     private String questionTitle;
     private String option1;
